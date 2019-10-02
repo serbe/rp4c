@@ -1,0 +1,15 @@
+[Unit]
+Description=AutoSSH service for port 9898
+After=network.target sshd.target network-online.target
+
+[Service]
+Environment="AUTOSSH_GATETIME=0"
+ExecStart=/usr/bin/autossh -M 10900 -o "PubkeyAuthentication=yes" -o "StrictHostKeyChecking=false" -o "PasswordAuthentication=no" -N -R udds.ru:9898:localhost:22 a@udds.ru -p 10220
+#ExecStop=/usr/bin/killall autossh
+#ExecStop=/usr/bin/killall -s KILL autossh
+User=a
+Restart=always
+RestartSec=20
+
+[Install]
+WantedBy=multi-user.target

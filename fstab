@@ -1,0 +1,6 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+LABEL=BOOT  /boot   vfat    defaults        0       0
+PARTUUID=87aa7d1e-f38b-4be9-b0fd-2330f938575a /mnt/sda1 ext4 noauto,x-systemd.automount,nofail 0 2
