@@ -1,0 +1,10 @@
+[Unit]
+Description=Automatic download updates when booted up after 5 minutes then check the system for updates every 120 minutes
+
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=120min
+Unit=autoupdate.service
+
+[Install]
+WantedBy=multi-user.target
